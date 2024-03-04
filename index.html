@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+       <div class="temp">
+        <div class="phone">
+            <p>11:11pm</p> <div><span style="float: right;">
+                <img src="signal.png">
+                <img src="wifi.png">
+                <img src="full-battery.png">
+            </span>
+            </div>
+        </div>
+
+ <h3 class="head">Temperature converter</h3>
+<div class="type">
+    <div class="field">
+    <label for="degree" style="color: rgb(164, 161, 161);">Degrees</label><br>
+    <input type="number" name="degree" id="inputTemp">
+</div>
+<div class="tfield">
+    <label for="Temperature" style="color: rgb(164, 161, 161);">Type</label><br>
+    <select name="" id="unitSelect">
+        <option value="fahrenheit">fahrenheit</option>
+        <option value="kelvin">kelvin</option>
+    </select>
+</div>
+</div>
+<div id="results">
+    <span class="result-head" style="color: rgb(164, 161, 161);">Result</span>
+
+    <h4 class="result" id="result"></h4>
+</div>
+<br>
+<button  class="converter" id="converter" onclick="convert()">Convert</button>
+        </div>
+       </div>
+    <br>
+    <script>
+        function convert() {
+          var inputTemp = document.getElementById("inputTemp").value;
+          var unit = document.getElementById("unitSelect").value;
+          var result;
+        
+          if (unit === "kelvin") {
+            result = inputTemp + 273.15; 
+            document.getElementById("result").innerHTML = + result + " K";
+          } else if (unit === "fahrenheit") {
+            result = (inputTemp *9/5)+32;
+            document.getElementById("result").innerHTML = + result + " F";
+          }
+        }
+        </script>
+    
+</body>
+</html>
